@@ -8,7 +8,6 @@ import net.minecraft.core.item.Item
 import net.minecraft.core.item.ItemStack
 import net.minecraft.core.item.material.ToolMaterial
 import net.minecraft.core.item.tag.ItemTags
-import net.minecraft.core.util.phys.Vec3d
 
 open class ItemWeapon(name: String, id: Int, val material: ToolMaterial, baseDamage: Int) : Item(name, id) {
 
@@ -16,8 +15,6 @@ open class ItemWeapon(name: String, id: Int, val material: ToolMaterial, baseDam
 
 	var extraEntityRange: Float = 0f; protected set
 	var extraBlockRange: Float = 0f; protected set
-
-	var renderScale: Vec3d = Vec3d.createVectorHelper(1.0, 1.0, 1.0); protected set
 
 
 	init {
@@ -42,7 +39,7 @@ open class ItemWeapon(name: String, id: Int, val material: ToolMaterial, baseDam
 
 	override fun onBlockDestroyed(stack: ItemStack, id: Int, x: Int, y: Int, z: Int, player: EntityLiving): Boolean {
 		val block = Block.blocksList[id] ?: return true
-		
+
 		if (block.hardness > 0.0f || this.isSilkTouch) {
 			stack.damageItem(2, player)
 		}

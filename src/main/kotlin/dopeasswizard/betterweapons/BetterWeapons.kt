@@ -15,6 +15,9 @@ object BetterWeapons: ModInitializer {
 
     override fun onInitialize() {
 
+
+
+
         LOG.info("Better Weapons initializing...")
 
 		ModItems.register()

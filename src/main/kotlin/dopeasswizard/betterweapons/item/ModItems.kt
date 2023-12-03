@@ -3,6 +3,7 @@ package dopeasswizard.betterweapons.item
 import dopeasswizard.betterweapons.BetterWeapons
 import dopeasswizard.betterweapons.Config
 import dopeasswizard.betterweapons.item.items.ItemBowSteel
+import dopeasswizard.betterweapons.item.items.ItemPebblePouch
 import dopeasswizard.betterweapons.item.items.ItemToolPike
 import net.minecraft.core.item.Item
 import net.minecraft.core.item.material.ToolMaterial
@@ -57,6 +58,13 @@ object ModItems {
 		ItemToolPike("tool.pike.steel", Config.nextItem(), ToolMaterial.steel),
 		"tool.pike.steel",
 		"pike_steel.png"
+	)
+
+	val pebblePouch: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemPebblePouch("pouch.pebble", Config.nextItem()),
+		"pouch.pebble",
+		"pouch.png"
 	)
 
 	fun register() {}

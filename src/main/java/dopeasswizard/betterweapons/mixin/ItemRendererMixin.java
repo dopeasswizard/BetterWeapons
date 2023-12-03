@@ -1,5 +1,6 @@
 package dopeasswizard.betterweapons.mixin;
 
+import dopeasswizard.betterweapons.interfaces.IRenderTweakable;
 import dopeasswizard.betterweapons.item.items.ItemToolPike;
 import dopeasswizard.betterweapons.item.items.ItemWeapon;
 import net.minecraft.client.render.ItemRenderer;
@@ -18,11 +19,8 @@ public class ItemRendererMixin
 
 	@Inject(method = "renderItem(Lnet/minecraft/core/entity/EntityLiving;Lnet/minecraft/core/item/ItemStack;)V", at = @At("HEAD"))
 	void renderItem(EntityLiving entity, ItemStack stack, CallbackInfo info) {
-		if (stack.getItem() instanceof ItemWeapon weapon) {
-
-			Vec3d scale = weapon.getRenderScale();
-			GL11.glScaled(scale.xCoord, scale.yCoord, scale.zCoord);
-
+		if (stack.getItem() instanceof IRenderTweakable tweakable) {
+			tweakable.onRender();
 		}
 	}
 

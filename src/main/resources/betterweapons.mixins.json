@@ -6,10 +6,11 @@
   "mixins": [
     "MinecraftMixin",
     "EntityArrowAccessor"
-
   ],
   "client": [
     "ItemRendererMixin",
+    "MobRendererMixin",
+    "PlayerRendererMixin",
     "PlayerControllerMixin"
   ],
   "injectors": {

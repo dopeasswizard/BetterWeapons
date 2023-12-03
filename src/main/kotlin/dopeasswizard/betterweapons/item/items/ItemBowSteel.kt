@@ -1,5 +1,6 @@
 package dopeasswizard.betterweapons.item.items
 
+import dopeasswizard.betterweapons.interfaces.IRenderTweakable
 import dopeasswizard.betterweapons.mixin.EntityArrowAccessor
 import net.minecraft.core.entity.player.EntityPlayer
 import net.minecraft.core.entity.projectile.EntityArrow
@@ -9,7 +10,7 @@ import net.minecraft.core.item.ItemBow
 import net.minecraft.core.item.ItemStack
 import net.minecraft.core.world.World
 
-class ItemBowSteel(name: String, id: Int) : ItemBow(name, id) {
+class ItemBowSteel(name: String, id: Int) : ItemBow(name, id), IRenderTweakable {
 
 	private val gravityMultiplier: Float = 0.5f
 	private val damageMultiplier: Float = 2f
@@ -53,6 +54,14 @@ class ItemBowSteel(name: String, id: Int) : ItemBow(name, id) {
 
 		if (!world.isClientSide)
 			world.entityJoinedWorld(arrow)
+	}
+
+	override fun isFull3D(): Boolean {
+		return true
+	}
+
+	override fun bowHolding(): Boolean {
+		return true
 	}
 
 }

@@ -1,14 +1,17 @@
 package dopeasswizard.betterweapons.item.items
 
+import dopeasswizard.betterweapons.interfaces.IRenderTweakable
 import net.minecraft.core.item.material.ToolMaterial
-import net.minecraft.core.util.phys.Vec3d
+import org.lwjgl.opengl.GL11
 
-class ItemToolPike(name: String, id: Int, material: ToolMaterial) : ItemWeapon(name, id, material, 2) {
+class ItemToolPike(name: String, id: Int, material: ToolMaterial) : ItemWeapon(name, id, material, 2), IRenderTweakable {
 
 	init {
-	    renderScale = Vec3d.createVectorHelper(1.0, 1.6, 1.0)
 		extraEntityRange = 2f
 	}
 
+	override fun onRender() {
+		GL11.glScalef(1f, 1.6f, 1f)
+	}
 
 }
