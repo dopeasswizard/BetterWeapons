@@ -18,6 +18,20 @@ object ModItems {
 		"bow_steel.png"
 	)
 
+	val ammoArrowIron: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		Item("ammo.arrow.iron", Config.nextItem()),
+		"ammo.arrow.iron",
+		"arrow_iron.png"
+	)
+
+	val ammoArrowSteel: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		Item("ammo.arrow.steel", Config.nextItem()),
+		"ammo.arrow.steel",
+		"arrow_steel.png"
+	)
+
 	val toolPikeWood: Item = ItemHelper.createItem(
 		BetterWeapons.MOD_ID,
 		ItemToolPike("tool.pike.wood", Config.nextItem(), ToolMaterial.wood),
@@ -60,7 +74,7 @@ object ModItems {
 		"pike_steel.png"
 	)
 
-	val pebblePouch: Item = ItemHelper.createItem(
+	val pouchPebble: Item = ItemHelper.createItem(
 		BetterWeapons.MOD_ID,
 		ItemPebblePouch("pouch.pebble", Config.nextItem()),
 		"pouch.pebble",

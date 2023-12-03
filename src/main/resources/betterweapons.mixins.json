@@ -4,14 +4,15 @@
   "package": "dopeasswizard.betterweapons.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MinecraftMixin",
-    "EntityArrowAccessor"
+    "EntityArrowAccessor",
+    "ItemBowMixin",
+    "MinecraftMixin"
   ],
   "client": [
     "ItemRendererMixin",
     "MobRendererMixin",
-    "PlayerRendererMixin",
-    "PlayerControllerMixin"
+    "PlayerControllerMixin",
+    "PlayerRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -21,3 +21,6 @@ item.betterweapons.tool.pike.steel.desc = Slay pesky monsters with this durable 
 
 item.betterweapons.pouch.pebble.name = Pebble Pouch
 item.betterweapons.pouch.pebble.desc = Hold your pebbles warm and cozy
+
+item.betterweapons.ammo.arrow.iron.name = Iron Arrow
+item.betterweapons.ammo.arrow.steel.name = Steel Arrow
