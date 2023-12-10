@@ -2,6 +2,7 @@ package dopeasswizard.betterweapons.item
 
 import dopeasswizard.betterweapons.BetterWeapons
 import dopeasswizard.betterweapons.Config
+import dopeasswizard.betterweapons.item.items.ItemBoomerang
 import dopeasswizard.betterweapons.item.items.ItemBowSteel
 import dopeasswizard.betterweapons.item.items.ItemPebblePouch
 import dopeasswizard.betterweapons.item.items.ItemToolPike
@@ -31,6 +32,15 @@ object ModItems {
 		"ammo.arrow.steel",
 		"arrow_steel.png"
 	)
+
+	val pouchPebble: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemPebblePouch("pouch.pebble", Config.nextItem()),
+		"pouch.pebble",
+		"pouch.png"
+	)
+
+
 
 	val toolPikeWood: Item = ItemHelper.createItem(
 		BetterWeapons.MOD_ID,
@@ -74,11 +84,48 @@ object ModItems {
 		"pike_steel.png"
 	)
 
-	val pouchPebble: Item = ItemHelper.createItem(
+
+
+	val toolBoomerangWood: Item = ItemHelper.createItem(
 		BetterWeapons.MOD_ID,
-		ItemPebblePouch("pouch.pebble", Config.nextItem()),
-		"pouch.pebble",
-		"pouch.png"
+		ItemBoomerang("tool.boomerang.wood", Config.nextItem(), ToolMaterial.wood),
+		"tool.boomerang.wood",
+		"boomerang_wood.png"
+	)
+
+	val toolBoomerangStone: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemBoomerang("tool.boomerang.stone", Config.nextItem(), ToolMaterial.stone),
+		"tool.boomerang.stone",
+		"boomerang_stone.png"
+	)
+
+	val toolBoomerangIron: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemBoomerang("tool.boomerang.iron", Config.nextItem(), ToolMaterial.iron),
+		"tool.boomerang.iron",
+		"boomerang_iron.png"
+	)
+
+	val toolBoomerangGold: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemBoomerang("tool.boomerang.gold", Config.nextItem(), ToolMaterial.gold),
+		"tool.boomerang.gold",
+		"boomerang_gold.png"
+	)
+
+	val toolBoomerangDiamond: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemBoomerang("tool.boomerang.diamond", Config.nextItem(), ToolMaterial.diamond),
+		"tool.boomerang.diamond",
+		"boomerang_diamond.png"
+	)
+
+	val toolBoomerangSteel: Item = ItemHelper.createItem(
+		BetterWeapons.MOD_ID,
+		ItemBoomerang("tool.boomerang.steel", Config.nextItem(), ToolMaterial.steel),
+		"tool.boomerang.steel",
+		"boomerang_steel.png"
 	)
 
 	fun register() {}

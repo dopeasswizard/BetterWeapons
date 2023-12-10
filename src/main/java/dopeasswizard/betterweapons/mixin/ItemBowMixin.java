@@ -1,7 +1,7 @@
 package dopeasswizard.betterweapons.mixin;
 
-import dopeasswizard.betterweapons.entity.EntityArrowIron;
-import dopeasswizard.betterweapons.entity.EntityArrowSteel;
+import dopeasswizard.betterweapons.entity.projectile.EntityArrowIron;
+import dopeasswizard.betterweapons.entity.projectile.EntityArrowSteel;
 import dopeasswizard.betterweapons.interfaces.IRanged;
 import dopeasswizard.betterweapons.item.ModItems;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -25,23 +25,29 @@ public class ItemBowMixin extends Item
 
 		ItemStack quiverSlot = player.inventory.armorItemInSlot(2);
 
+		// quiver
 		if (quiverSlot != null && quiverSlot.itemID == Item.armorQuiver.id && quiverSlot.getMetadata() < quiverSlot.getMaxDamage()) {
 			player.inventory.armorItemInSlot(2).damageItem(1, player);
 			shootArrow(stack, world, player, new EntityArrow(world, player, true, 0));
 		}
 
+		// golden quiver
 		else if (quiverSlot != null && quiverSlot.itemID == Item.armorQuiverGold.id)
 			shootArrow(stack, world, player, new EntityArrowPurple(world, player, false));
 
+		// golden arrows
 		else if (player.inventory.consumeInventoryItem(Item.ammoArrowGold.id))
 			shootArrow(stack, world, player, new EntityArrowGolden(world, player, true));
 
+		// iron arrows
 		else if (player.inventory.consumeInventoryItem(ModItems.INSTANCE.getAmmoArrowIron().id))
-			shootArrow(stack, world, player, new EntityArrowIron(world, player, true));
+			shootArrow(stack, world, player, new EntityArrowIron(world, player));
 
+		// steel arrows
 		else if (player.inventory.consumeInventoryItem(ModItems.INSTANCE.getAmmoArrowSteel().id))
-			shootArrow(stack, world, player, new EntityArrowSteel(world, player, true));
+			shootArrow(stack, world, player, new EntityArrowSteel(world, player));
 
+		// normal arrows
 		else if (player.inventory.consumeInventoryItem(Item.ammoArrow.id))
 			shootArrow(stack, world, player, new EntityArrow(world, player, true, 0));
 

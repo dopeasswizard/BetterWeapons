@@ -1,6 +1,7 @@
 package dopeasswizard.betterweapons
 
 import dopeasswizard.betterweapons.crafting.ModCraftings
+import dopeasswizard.betterweapons.entity.ModEntities
 import dopeasswizard.betterweapons.item.ModItems
 import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
@@ -14,7 +15,6 @@ object BetterWeapons: ModInitializer {
     val LOG: Logger = LoggerFactory.getLogger(MOD_ID)
 
     override fun onInitialize() {
-
 
 		/*
 		TODO:
@@ -45,6 +45,7 @@ object BetterWeapons: ModInitializer {
 
 		ModItems.register()
 		ModCraftings.register()
+		ModEntities.register()
     }
 
 }
